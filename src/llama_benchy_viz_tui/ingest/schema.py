@@ -15,7 +15,7 @@ import json
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from . import SUPPORTED_SCHEMA
+from .. import SUPPORTED_SCHEMA
 
 
 @dataclass

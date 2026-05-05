@@ -17,7 +17,7 @@ from dataclasses import dataclass, field
 from threading import RLock
 from typing import Deque, Dict, List, Optional, Tuple
 
-from .schema import Envelope
+from .ingest.schema import Envelope
 
 
 # Stream colors, cycled by slot index. Match the original spec.

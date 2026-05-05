@@ -12,7 +12,7 @@ from rich.console import Console
 from rich.live import Live
 
 from . import SUPPORTED_SCHEMA, __version__
-from . import reader as reader_mod
+from .ingest import reader as reader_mod
 from .input_kbd import KeyboardReader
 from .state import AppState
 from .ui import render
