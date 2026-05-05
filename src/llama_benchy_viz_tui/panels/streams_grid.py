@@ -11,7 +11,7 @@ from rich.table import Table
 from rich.text import Text
 
 from ..chart import render_sparkline
-from ..state import SlotState, Snapshot
+from ..domain import SlotState, Snapshot
 from ._common import DIM, PANEL_BORDER, phase_badge
 
 

@@ -9,7 +9,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from ..state import Snapshot, SlotState
+from ..domain import Snapshot, SlotState
 from ._common import ACCENT, DIM, PANEL_BORDER
 
 

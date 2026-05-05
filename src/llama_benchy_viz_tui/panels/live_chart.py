@@ -8,7 +8,7 @@ from rich.table import Table
 from rich.text import Text
 
 from ..chart import render_chart
-from ..state import CHART_HISTORY_S, Snapshot
+from ..domain import CHART_HISTORY_S, Snapshot
 from ._common import DIM, PANEL_BORDER
 
 

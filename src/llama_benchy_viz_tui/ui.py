@@ -15,7 +15,7 @@ from rich.console import RenderableType
 from rich.layout import Layout
 
 from . import panels
-from .state import Snapshot
+from .domain import Snapshot
 
 # Heights of fixed-size regions (in rows).
 HEADER_H = 3

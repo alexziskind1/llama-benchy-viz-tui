@@ -18,7 +18,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from ..state import CellAggregate, CellKey, Snapshot, SlotState
+from ..domain import CellAggregate, CellKey, Snapshot, SlotState
 from ._common import DIM, PANEL_BORDER
 
 

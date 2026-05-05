@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from rich.console import RenderableType
 
-from ..state import Snapshot
+from ..domain import Snapshot
 from ._sweep import any_slot_varies, render_sweep
 
 

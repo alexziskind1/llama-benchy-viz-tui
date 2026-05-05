@@ -14,7 +14,7 @@ from rich.live import Live
 from . import SUPPORTED_SCHEMA, __version__
 from .ingest import reader as reader_mod
 from .input_kbd import KeyboardReader
-from .state import AppState
+from .domain import AppState
 from .ui import render
 
 DEFAULT_FPS = 8.0

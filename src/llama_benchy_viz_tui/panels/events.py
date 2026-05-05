@@ -9,7 +9,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from ..state import Snapshot
+from ..domain import Snapshot
 from ._common import DIM, PANEL_BORDER
 
 
