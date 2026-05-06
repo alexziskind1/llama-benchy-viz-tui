@@ -16,6 +16,7 @@ from .ingest import reader as reader_mod
 from .input_kbd import KeyboardReader
 from .domain import AppState
 from .ui import render
+from .view import DashboardMode, parse as parse_mode
 
 DEFAULT_FPS = 8.0
 
@@ -75,6 +76,18 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
             "useful for debugging multi-target runs, errors, or long sweeps."
         ),
     )
+    parser.add_argument(
+        "--mode",
+        type=str,
+        default=None,
+        choices=[m.value for m in DashboardMode],
+        help=(
+            "Dashboard mode. Auto-detected when omitted: live-single / "
+            "live-race / static-single / static-race depending on whether "
+            "the run is in flight and how many models are present. Override "
+            "for screen recordings or comparison shots."
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -90,13 +103,20 @@ def main(argv: Optional[list[str]] = None) -> int:
     keyboard = KeyboardReader()
     keyboard.start()  # silently no-ops if /dev/tty isn't available
 
+    mode_override = parse_mode(args.mode) if args.mode else None
+
     period = 1.0 / max(args.fps, 1.0)
     finished_at: Optional[float] = None
     eof = False
 
     def renderable():
         size = console.size
-        return render(state.snapshot(), console_width=size.width, console_height=size.height)
+        return render(
+            state.snapshot(),
+            console_width=size.width,
+            console_height=size.height,
+            mode=mode_override,
+        )
 
     try:
         with Live(
